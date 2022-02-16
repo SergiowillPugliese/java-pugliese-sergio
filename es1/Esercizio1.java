@@ -23,15 +23,18 @@ public class Esercizio1 {
         Scanner tastiera = new Scanner(System.in);
         String cod = "53840";
         System.out.println("Indovina il codice numerico di 5 cifre");
-        for(int i=0; i < cod.length(); i++){
-            int somma = 0;
-            String n =  tastiera.nextLine();
-            if (n == cod.charAt(i)) {
-                somma = somma += 1;                                
+        String n =  tastiera.nextLine();
+        int somma = 0;
+        int contatore = 0;
+
+        for(int i=0; i < cod.length() && i < n.length() ; i++){
+            if (n.charAt(i) == cod.charAt(i)) {
+                somma = somma + (n.charAt(i) - '0');
+                contatore ++;                                
             }
-            System.out.println("Hai indovinato "+(somma)+" numeri di " +(cod.length()));
         }
-        
+        System.out.println("Hai indovinato "+(contatore)+" numeri di " +(cod.length()));
+        System.out.println("la somma dei numeri corretti è: "+ somma);
     }
 }
 
