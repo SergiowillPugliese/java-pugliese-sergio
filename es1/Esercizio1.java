@@ -26,15 +26,18 @@ public class Esercizio1 {
         String n =  tastiera.nextLine();
         int somma = 0;
         int contatore = 0;
+        int tentativi = 10; 
 
         for(int i=0; i < cod.length() && i < n.length() ; i++){
-            if (n.charAt(i) == cod.charAt(i)) {
+            if (n.charAt(i) == cod.charAt(i) && tentativi > 0) {
                 somma = somma + (n.charAt(i) - '0');
-                contatore ++;                                
+                contatore ++;
             }
         }
+        tentativi = tentativi - 1;                                
         System.out.println("Hai indovinato "+(contatore)+" numeri di " +(cod.length()));
         System.out.println("la somma dei numeri corretti è: "+ somma);
+        System.out.println("hai ancora: " + tentativi + " di 10");
     }
 }
 
