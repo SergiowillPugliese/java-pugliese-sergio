@@ -17,29 +17,57 @@ fare un esercizio a scelta dal libro sull'argomento con i problemi
 // chiedere all'utente quanti numeri vuole inserire e 
 // salvarli in un array
 
+import java.util.Random;
 import java.util.Scanner;
+
 public class Esercizio1 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
+
         Scanner tastiera = new Scanner(System.in);
-        String cod = "53840";
-        System.out.println("Indovina il codice numerico di 5 cifre");
-        String n =  tastiera.nextLine();
+        Random rand = new Random();
+        int randnum = 100000;
+        int int_random = rand.nextInt(randnum);
+        String cod = Integer.toString(int_random);
         int somma = 0;
         int contatore = 0;
-        int tentativi = 10; 
+        int tentativi = 10;
+        String n = new String();
+        String ins = "Inserisci il tuo codice qui: ";
+        System.out.println("");
 
-        for(int i=0; i < cod.length() && i < n.length() ; i++){
-            if (n.charAt(i) == cod.charAt(i) && tentativi > 0) {
-                somma = somma + (n.charAt(i) - '0');
-                contatore ++;
+        while (tentativi > 0) {
+            System.out.println("Indovina il codice segreto. Può essere da 1 a " + cod.length() +  " cifre");
+            System.out.print(ins);
+            n = tastiera.nextLine();
+                for (int i = 0; i < cod.length() && i < n.length(); i++) {
+                    int num = 1;
+                    if (n.charAt(i) == cod.charAt(i)) {
+                        num += i;
+                        System.out.println("Il " + num++ + "° numero è corretto");
+                        somma = somma + (n.charAt(i) - '0');
+                        contatore++;
+                    } else if (n.charAt(i) < cod.charAt(i)) {
+                        num += i;
+                        System.out.println("---> Il " + num++ + "° numero è piu' basso <---");
+                    } else {
+                        num += i;
+                        System.out.println("---> Il " + num + "° numero è più alto <---");
+                    }
+                }
+                if (contatore >= 5) {
+                    System.out.println("Hai vinto!");
+                    break;
+                }
+                tentativi--;
+                System.out.println("Hai indovinato " + contatore + " numeri di " + cod.length());
+                System.out.println("la somma dei numeri corretti è: " + somma);
+                System.out.println("Sei a: " + tentativi + " di 10");
+                contatore = 0;
+                somma = 0;
+                System.out.println("");
+                if (tentativi <= 0) {
+                    System.out.println(cod);
+                }
             }
         }
-        tentativi = tentativi - 1;                                
-        System.out.println("Hai indovinato "+(contatore)+" numeri di " +(cod.length()));
-        System.out.println("la somma dei numeri corretti è: "+ somma);
-        System.out.println("hai ancora: " + tentativi + " di 10");
     }
-}
-
-//int n = Integer.parseInt(tastiera.nextLine());
-//System.out.println("Inserisci il "+(i+1)+"° numero:");
