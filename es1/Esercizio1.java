@@ -39,16 +39,17 @@ public class Esercizio1 {
             System.out.println("Indovina il codice segreto. Può essere da 1 a " + cod.length() +  " cifre");
             System.out.print(ins);
             n = tastiera.nextLine();
+            System.out.println("");
                 for (int i = 0; i < cod.length() && i < n.length(); i++) {
                     int num = 1;
                     if (n.charAt(i) == cod.charAt(i)) {
                         num += i;
-                        System.out.println("Il " + num++ + "° numero è corretto");
+                        System.out.println("IL " + num + "° NUMERO E' CORRETTO");
                         somma = somma + (n.charAt(i) - '0');
                         contatore++;
                     } else if (n.charAt(i) < cod.charAt(i)) {
                         num += i;
-                        System.out.println("---> Il " + num++ + "° numero è piu' basso <---");
+                        System.out.println("---> Il " + num + "° numero è piu' basso <---");
                     } else {
                         num += i;
                         System.out.println("---> Il " + num + "° numero è più alto <---");
@@ -59,6 +60,7 @@ public class Esercizio1 {
                     break;
                 }
                 tentativi--;
+                System.out.println("");
                 System.out.println("Hai indovinato " + contatore + " numeri di " + cod.length());
                 System.out.println("la somma dei numeri corretti è: " + somma);
                 System.out.println("Sei a: " + tentativi + " di 10");
