@@ -1,5 +1,7 @@
-package com.engim;
+package com.engim.lezione5.forme;
 
-public class Poligono extends Main {
+public class Poligono extends Forma{
+
+
 
 }

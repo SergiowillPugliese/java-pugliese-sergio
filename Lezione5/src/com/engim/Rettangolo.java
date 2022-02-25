@@ -1,28 +1,24 @@
-package com.engim;
+package com.engim.lezione5.forme;
 
-public class Rettangolo extends Quadrilatero{
+public class Rettangolo extends Quadrilatero {
     private int base;
     private int altezza;
 
-    public int getBase() {
-        return base;
-    }
-
-    public void setBase(int base) {
+    public Rettangolo(int base, int altezza) {
         this.base = base;
-    }
-
-    public int getAltezza() {
-        return altezza;
-    }
-
-    public void setAltezza(int altezza) {
         this.altezza = altezza;
     }
 
-    public int area(){
-        return (base + altezza)*2;
+    public void setBase(int base) {
+        this.base = Math.max(0,base);
     }
 
-}
+    public void setAltezza(int altezza) {
+        this.altezza = Math.max(0,altezza);
+    }
 
+    public double area() {
+        return (base * altezza);
+
+    }
+}
