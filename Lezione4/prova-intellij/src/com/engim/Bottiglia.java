@@ -42,13 +42,4 @@ public class Bottiglia {
                 ']';
     }
 
-    public static void riempi(int q){
-        if (q = 0){
-
-        }
-    }
-
-    public static void svuota(int q){
-
-    }
 }
