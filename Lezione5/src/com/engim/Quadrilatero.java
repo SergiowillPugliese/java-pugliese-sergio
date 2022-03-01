@@ -1,4 +1,4 @@
-package com.engim.lezione5.forme;
+package com.engim;
 
 public class Quadrilatero extends Poligono{
 

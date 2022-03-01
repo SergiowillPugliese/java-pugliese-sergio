@@ -1,4 +1,4 @@
-package com.engim.lezione5.forme;
+package com.engim;
 
 public class Triangolo extends Poligono {
     private int base;
