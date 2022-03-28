@@ -37,6 +37,7 @@ public class ClickEvent implements ActionListener {
             break;
 
             case "Apri":
+                //se è stato caricato
                 if(!fm.loadFileText()){
                     //compare popup con testo corrente
                     JOptionPane.showMessageDialog(null, fm.getCurrentText());
@@ -52,8 +53,8 @@ public class ClickEvent implements ActionListener {
 
             //funzionamento del size
             default:
-                textUtils ut = new textUtils(this.gui);
-                ut.setSize(Integer,parseInt(cmd));
+                TextUtils ut = new TextUtils(this.gui);
+                ut.setSize(Integer.parseInt(cmd));
             break;
         }
     }

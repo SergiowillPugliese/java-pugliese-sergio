@@ -1,9 +1,7 @@
 package com.engim;
 
 import javax.swing.*;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
 
 public class FileManager {
     //costruttore
@@ -29,7 +27,30 @@ public class FileManager {
         }
         return "Operazione annullata";
     }
-}
 
-//https://www.youtube.com/watch?v=96Rm22MYZNg
-//minuto 15:00
+    public boolean loadFileText(){
+        JFileChooser chooser = new JFileChooser("f:");
+        int r = chooser.showSaveDialog(null);
+        if (r == JFileChooser.APPROVE_OPTION){
+            File f = new File(chooser.getSelectedFile().getAbsolutePath());
+            try {
+                String line = "", text = "";
+                BufferedReader br = new BufferedReader(new FileReader(f));
+                text = br.readLine();
+
+                while((line = br.readLine()) != null){
+                    text += "\n" + line;
+                }
+                this.text = text;
+                return true;
+            } catch (Exception evt){
+                this.text = "error: " + evt.getMessage();
+                return false;
+            }
+        }
+        return false;
+    }
+    public String getCurrentText(){
+        return this.text;
+    }
+}

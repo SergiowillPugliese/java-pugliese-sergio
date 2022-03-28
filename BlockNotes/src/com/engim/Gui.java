@@ -15,10 +15,10 @@ public class Gui extends JFrame {
     public JTextArea text;
 
     public Gui(String title){
-        //qui andiamo a passare il titolo
+        //qui andiamo a passare il titolo alla classe padre
         super(title);
 
-        //istanza della testarea (riga 15)
+        //istanza della textarea (riga 15)
         text = new JTextArea();
 
         //aggiunge la textarea al frame ovvero alla pagina
@@ -62,9 +62,9 @@ public class Gui extends JFrame {
         JMenuItem miPaste = new JMenuItem("Incolla");
 
         //aggiunge gli item alla categoria "Modifica"
-        mfile.add(miCut);
-        mfile.add(miCopy);
-        mfile.add(miPaste);
+        medit.add(miCut);
+        medit.add(miCopy);
+        medit.add(miPaste);
 
         //istanza evento in java per ogni item di "Modifica"
         miCut.addActionListener(new ClickEvent(this));
@@ -85,13 +85,13 @@ public class Gui extends JFrame {
 
 
         //aggiunge gli item alla categoria "Size"
-        mfile.add(mi5);
-        mfile.add(mi10);
-        mfile.add(mi25);
-        mfile.add(mi35);
-        mfile.add(mi48);
-        mfile.add(mi55);
-        mfile.add(mi72);
+        msize.add(mi5);
+        msize.add(mi10);
+        msize.add(mi25);
+        msize.add(mi35);
+        msize.add(mi48);
+        msize.add(mi55);
+        msize.add(mi72);
 
         //istanza evento in java per ogni item di "Size"
         mi5.addActionListener(new ClickEvent(this));
