@@ -1,7 +1,7 @@
-package com.engim.lezione12.es_mvc.controller;
+package es_mvc.controller;
 
-import com.engim.lezione12.es_mvc.model.ArrayListSpesaRepository;
-import com.engim.lezione12.es_mvc.model.SpesaRepository;
+import es_mvc.model.ArrayListSpesaRepository;
+import es_mvc.model.SpesaRepository;
 
 import java.util.List;
 

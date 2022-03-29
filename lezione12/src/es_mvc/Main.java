@@ -1,6 +1,6 @@
-package com.engim.lezione12.es_mvc;
+package es_mvc;
 
-import com.engim.lezione12.es_mvc.controller.ListaSpesaController;
+import es_mvc.controller.ListaSpesaController;
 
 import java.util.List;
 import java.util.Scanner;
