@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class ClickEvent implements ActionListener {
 
-    //costruttore della clsse Gui
+    //costruttore della classe Gui
     private Gui gui;
     public ClickEvent(Gui gui){
         this.gui = gui;
