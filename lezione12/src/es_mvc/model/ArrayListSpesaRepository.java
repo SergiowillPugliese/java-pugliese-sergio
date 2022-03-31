@@ -1,4 +1,4 @@
-package es_mvc.model;
+package com.engim.lezione12.es_mvc.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;

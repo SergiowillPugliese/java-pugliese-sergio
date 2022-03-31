@@ -1,12 +1,10 @@
 package com.engim.lezione12.db;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
-public class JDBCExample {
+public class JDBCExamplePrepareStatement {
+
+
 
 //   SQLInjection
 //    str ="' or 1 = 1 or '"
@@ -22,8 +20,9 @@ public class JDBCExample {
         // Open a connection
         try{
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(QUERY);
+            PreparedStatement stmt = conn.prepareStatement("select nome from liste where nome = ?");
+            stmt.setString(1,"Macellaio");
+            ResultSet rs = stmt.executeQuery();
 
             while(rs.next()){
                 //Display values

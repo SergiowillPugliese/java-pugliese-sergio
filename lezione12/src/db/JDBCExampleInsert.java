@@ -1,12 +1,10 @@
 package com.engim.lezione12.db;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
-public class JDBCExample {
+public class JDBCExampleInsert {
+
+
 
 //   SQLInjection
 //    str ="' or 1 = 1 or '"
@@ -22,13 +20,10 @@ public class JDBCExample {
         // Open a connection
         try{
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(QUERY);
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO liste VALUES (?)");
+            stmt.setString(1,"Fruttivendolo");
+            stmt.executeUpdate();
 
-            while(rs.next()){
-                //Display values
-               System.out.println(rs.getString("nome"));
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
