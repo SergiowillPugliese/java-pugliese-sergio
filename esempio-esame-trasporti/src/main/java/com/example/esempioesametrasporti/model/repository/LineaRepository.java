@@ -10,7 +10,7 @@ import java.util.List;
 
 public class LineaRepository {
 
-    static final String DB_URL = "jdbc:mysql://localhost:3306/java";
+    static final String DB_URL = "jdbc:mysql://localhost:8889/java";
     static final String USER = "java";
     static final String PASS = "java";
 

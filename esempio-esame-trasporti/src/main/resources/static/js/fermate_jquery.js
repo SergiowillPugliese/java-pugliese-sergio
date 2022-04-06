@@ -1,4 +1,4 @@
-const url = 'http://localhost:8081/fermate'
+const url = 'http://localhost:8090/fermate'
 
 $(document).ready(function(){
     $.ajax({

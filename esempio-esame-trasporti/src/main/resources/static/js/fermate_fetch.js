@@ -1,6 +1,6 @@
 
 const table = document.getElementById('fermate');
-const url = 'http://localhost:8081/fermate';
+const url = 'http://localhost:8090/fermate';
 
 fetch(url)
     .then((response) => {
@@ -8,12 +8,13 @@ fetch(url)
     })
     .then((data) => {
         let fermate = data;
-
+        console.log(fermate)
         fermate.map(function(fermata) {
             let tr = document.createElement('tr');
             let id = document.createElement('td');
             let nome = document.createElement('td');
             let zona = document.createElement('td');
+            let tbody = document.getElementById('tbody');
 
             id.innerHTML = `${fermata.id}`;
             nome.innerHTML = `${fermata.nome}`;
@@ -22,7 +23,7 @@ fetch(url)
             tr.appendChild(id);
             tr.appendChild(nome);
             tr.appendChild(zona);
-            table.appendChild(tr);
+            tbody.appendChild(tr);
         });
     })
     .catch(function(error) {
