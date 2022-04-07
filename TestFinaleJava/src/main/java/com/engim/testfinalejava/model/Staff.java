@@ -5,10 +5,10 @@ public class Staff {
     private String nome;
     private  String cognome;
     private String mansione;
-    private int admin;
+    private boolean admin;
     private String password;
 
-    public Staff(int id, String nome, String cognome, String mansione, int admin, String password) {
+    public Staff(int id, String nome, String cognome, String mansione, boolean admin, String password) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
@@ -49,11 +49,11 @@ public class Staff {
         this.mansione = mansione;
     }
 
-    public int getAdmin() {
+    public boolean isAdmin() {
         return admin;
     }
 
-    public void setAdmin(int admin) {
+    public void setAdmin(boolean admin) {
         this.admin = admin;
     }
 
