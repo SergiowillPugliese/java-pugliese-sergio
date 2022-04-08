@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StaffRepository {
-    static final String DB_URL = "jdbc:mysql://localhost:3306/progettoJava";
-    static final String USER = "root";
-    static final String PASS = "password";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/progetto";
+    static final String USER = "progetto";
+    static final String PASS = "progetto";
 
     public static List<Staff>getStaff(){
         //creo la lista staff da restituire
