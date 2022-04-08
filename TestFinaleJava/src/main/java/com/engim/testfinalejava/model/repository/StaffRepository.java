@@ -7,16 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StaffRepository {
-    static final String DB_URL = "jdbc:mysql://localhost:8080/progettoJava";
-    static final String USER = "progettoJava";
-    static final String PASS = "progettoJava";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/progettoJava";
+    static final String USER = "root";
+    static final String PASS = "password";
 
     public static List<Staff>getStaff(){
         //creo la lista staff da restituire
         List<Staff> staffList = new ArrayList<>();
         try{
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            PreparedStatement stmt = conn.prepareStatement("SELECT id,nome,cognome,mansione,admin,password FROM staff");
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM staff");
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Staff staff = new Staff(
