@@ -1,36 +1,39 @@
 package com.engim.testfinalejava.model.repository;
 
-import com.engim.testfinalejava.model.Menu;
+import com.engim.testfinalejava.model.Ordini;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuRepository {
+public class OrdiniRepository {
     static final String DB_URL = "jdbc:mysql://localhost:3306/progetto";
     static final String USER = "progetto";
     static final String PASS = "progetto";
 
-    public static List<Menu> getMenu(){
+    public static List<Ordini> getOrdini(){
         //creo la lista staff da restituire
-        List<Menu> menuList = new ArrayList<>();
+        List<Ordini> ordiniList = new ArrayList<>();
         try{
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM menu");
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM ordini");
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                Menu menu = new Menu(
+                Ordini ordini = new Ordini(
                         rs.getInt("id"),
-                        rs.getString("nome"),
-                        rs.getDouble("prezzo"),
-                        rs.getBoolean("categoria")
+                        rs.getInt("n_Coperti"),
+                        rs.getInt("n_Tavolo"),
+                        rs.getBoolean("pagato"),
+                        rs.getInt("id_Staff")
                 );
-                menuList.add(menu);
+                ordiniList.add(ordini);
             }
 
         } catch (SQLException e){
             e.printStackTrace();
         }
-        return menuList;
+        return ordiniList;
     }
+
+
 }

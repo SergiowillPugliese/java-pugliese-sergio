@@ -4,9 +4,9 @@ public class Menu {
     private int id;
     private String nome;
     private double prezzo;
-    private String categoria;
+    private boolean categoria;
 
-    public Menu(int id, String nome, double prezzo, String categoria) {
+    public Menu(int id, String nome, double prezzo, boolean categoria) {
         this.id = id;
         this.nome = nome;
         this.prezzo = prezzo;
@@ -37,11 +37,11 @@ public class Menu {
         this.prezzo = prezzo;
     }
 
-    public String getCategoria() {
+    public boolean getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(String bool) {
         this.categoria = categoria;
     }
 
