@@ -1,6 +1,6 @@
 package com.engim.testfinalejava.model;
 
-public class Staff {
+public class Admin {
     private int id;
     private String nome;
     private  String cognome;
@@ -8,7 +8,7 @@ public class Staff {
     private boolean admin;
     private String password;
 
-    public Staff(int id, String nome, String cognome, String mansione, boolean admin, String password) {
+    public Admin(int id, String nome, String cognome, String mansione, boolean admin, String password) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
