@@ -1,6 +1,7 @@
 package com.example.esempioesametrasporti.model.repository;
 
 import com.example.esempioesametrasporti.model.Fermata;
+import com.example.esempioesametrasporti.model.LineeFermate;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -77,6 +78,30 @@ public class FermataRepository {
         }
         //restituisco la Fermata
         return fermata;
+    }
+
+    public static List <LineeFermate> getLineeFermate () {
+
+        List<LineeFermate> fermate = new ArrayList<LineeFermate>();
+        try{
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            PreparedStatement stmt = conn.prepareStatement("SELECT a.id, a.nome, c.id, c.nome, a.zona  FROM fermate as a JOIN fermate_linee as b ON a.id = b.id_fermate JOIN linee as c ON b.id_linea=c.id ORDER BY 2,4");
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                LineeFermate lf = new LineeFermate();
+                lf.setIdFermata(rs.getInt(1));
+                lf.setNomeFermata(rs.getString(2));
+                lf.setIdLinea(rs.getInt(3));
+                lf.setNomeLinea(rs.getString(4));
+                lf.setZona(rs.getString(5));
+                fermate.add(lf);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        //restituisco la lista
+        return fermate;
     }
 
 }
